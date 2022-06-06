@@ -1,0 +1,5 @@
+{
+    "Data": {
+    "ConnectionStrings": "server=127.0.0.1;user id=root;password=;port=3306;database=agencedb;"       
+  }
+}
