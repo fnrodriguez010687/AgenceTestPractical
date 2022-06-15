@@ -7,6 +7,7 @@ namespace AgenceTestPractical
         public MySqlConnection Connection;
 
         public AppDb()
+        
         {
             Connection = new MySqlConnection(AppConfig.Config["Data:ConnectionStrings"]);
         }
