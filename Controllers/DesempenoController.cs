@@ -16,10 +16,14 @@ namespace AgenceTestPractical.Controllers
         {
             using (var db = new AppDb())
             {
+                try{
                 db.Connection.Open();
                 var query = new UsuarioQuery(db);
                 var result = query.CosultoresActivos();
                 return new OkObjectResult(result);
+                }
+                catch(Exception e){
+                return new BadRequestObjectResult(e.Message);}
             }
         }
 
@@ -30,7 +34,7 @@ namespace AgenceTestPractical.Controllers
             string datein = HttpContext.Request.Query["datein"];
             string dateend = HttpContext.Request.Query["dateend"];
             string consultores="";
-            foreach(var value in  HttpContext.Request.Query["consultores"])
+            foreach(var value in  HttpContext.Request.Query["consultor"])
             {
                 if(consultores.Equals(""))
                  consultores="\""+value+"\"";
